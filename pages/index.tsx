@@ -1,15 +1,9 @@
-import Head from 'next/head';
+import WineHeader from '../components/WineHeader';
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-
-      <main >
-        <h1>Hello World</h1>
-      </main>
+      <WineHeader />
     </div>
   );
 }
