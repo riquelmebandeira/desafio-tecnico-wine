@@ -15,6 +15,7 @@
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "import/extensions": ["error", "ignorePackages", { "": "never" }],
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "object-curly-newline": "off"
   }
 }
