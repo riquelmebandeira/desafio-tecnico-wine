@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
 import ProductList from '../components/ProductList';
-import WineHeader from '../components/WineHeader';
+import Header from '../components/Header';
 
 export default function Home({ products, totalPages }) {
   return (
     <div>
-      <WineHeader />
+      <Header />
       <ProductList products={products} totalPages={totalPages}/>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { accountIcon, cartIcon, searchIcon, wineLogo } from '../assets';
 import ImageInput from './ImageInput';
-import Header from '../styles/header';
+import * as S from '../styles';
 
-const WineHeader: React.FC = () => (
-    <Header>
+const Header: React.FC = () => (
+    <S.Header>
       <div>
         <img src={wineLogo} alt="Logo da Wine" />
         <nav>
@@ -20,7 +20,7 @@ const WineHeader: React.FC = () => (
           <ImageInput src={cartIcon} alt="Ícone do carrinho" />
         </div>
       </div>
-    </Header>
+    </S.Header>
 );
 
-export default WineHeader;
+export default Header;

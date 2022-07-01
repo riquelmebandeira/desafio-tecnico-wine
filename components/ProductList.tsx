@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import Link from 'next/link';
-import Pagination from '../styles/pagination';
+import * as S from '../styles';
 import ProductCard from './ProductCard';
-import Container from '../styles/productList';
+
+/**
+ * I was struggling to name the stylized components and i really liked this approach:
+ * https://medium.com/inturn-eng/naming-styled-components-d7097950a245
+ */
 
 const propTypes = {
   products: PropTypes.arrayOf(PropTypes.object),
@@ -13,11 +17,11 @@ const propTypes = {
 type ProductListProps = InferProps<typeof propTypes>;
 
 const ProductList: React.FC<ProductListProps> = ({ products, totalPages }) => (
-  <Container>
+  <S.ProductList>
     {
       products.map((product, index: number) => <ProductCard key={index} {...product}/>)
     }
-    <Pagination>
+    <S.Pagination>
       {
         Array(totalPages).fill(1).map((_, index) => (
           <Link href={`/?page=${index + 1}`}>
@@ -25,8 +29,8 @@ const ProductList: React.FC<ProductListProps> = ({ products, totalPages }) => (
           </Link>
         ))
       }
-    </Pagination>
-  </Container>
+    </S.Pagination>
+  </S.ProductList>
 );
 
 ProductList.propTypes = propTypes;

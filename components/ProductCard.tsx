@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import Button from './Button';
-import Card from '../styles/card';
+import * as S from '../styles';
 
 const propTypes = {
   image: PropTypes.string.isRequired,
@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
 
   return (
     <div className="product-container">
-      <Card>
+      <S.Card>
         <img src={image} alt="Foto do produto" />
         <a>{name}</a>
         <div className="discount-container">
@@ -30,7 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
           <span className="price-highlight"> R$ {priceMember}</span>
         </span>
         <span className="non-member-price">{`Não Sócio R$ ${priceNonMember}`}</span>
-      </Card>
+      </S.Card>
       <Button text="Adicionar" />
     </div>
   );

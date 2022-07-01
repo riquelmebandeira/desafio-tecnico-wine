@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
-import PrimaryButton from '../styles/primaryButton';
+import * as S from '../styles';
 
 const propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -10,12 +10,12 @@ const propTypes = {
 type ButtonProps = InferProps<typeof propTypes>;
 
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => (
-  <PrimaryButton
+  <S.Button
     type="button"
     onClick={onClick}
   >
     {text}
-  </PrimaryButton>
+  </S.Button>
 );
 
 Button.propTypes = propTypes;
