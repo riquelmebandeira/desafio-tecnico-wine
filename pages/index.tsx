@@ -1,28 +1,12 @@
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-import ProductCard from '../components/ProductCard';
+import ProductList from '../components/ProductList';
 import WineHeader from '../components/WineHeader';
-import Pagination from '../styles/pagination';
-import ProductList from '../styles/productList';
 
 export default function Home({ products, totalPages }) {
   return (
     <div>
       <WineHeader />
-      <ProductList>
-        {
-          products.map((data, index: number) => <ProductCard key={index} {...data}/>)
-        }
-        <Pagination>
-          {
-            Array(totalPages).fill(1).map((_, index) => (
-              <Link href={`/?page=${index + 1}`}>
-                <a>{index + 1}</a>
-              </Link>
-            ))
-          }
-        </Pagination>
-      </ProductList>
+      <ProductList products={products} totalPages={totalPages}/>
     </div>
   );
 }
