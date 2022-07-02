@@ -11,8 +11,11 @@ export default function Home({ products, totalPages }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ query: { page = 1 } }) => {
-  const response = await fetch(`https://wine-back-test.herokuapp.com/products?page=${page}&limit=9`);
+export const getServerSideProps: GetServerSideProps = async ({ query: { page = 1, name } }) => {
+  const url = name ? `https://wine-back-test.herokuapp.com/products?page=${page}&name=${name}&limit=9`
+    : `https://wine-back-test.herokuapp.com/products?page=${page}&limit=9`;
+
+  const response = await fetch(url);
 
   const data = await response.json();
 
