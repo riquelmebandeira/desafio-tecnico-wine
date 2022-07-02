@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes, { InferProps } from 'prop-types';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import * as S from '../styles';
 import ProductCard from './ProductCard';
@@ -16,22 +17,34 @@ const propTypes = {
 
 type ProductListProps = InferProps<typeof propTypes>;
 
-const ProductList: React.FC<ProductListProps> = ({ products, totalPages }) => (
-  <S.ProductList>
-    {
-      products.map((product, index: number) => <ProductCard key={index} {...product}/>)
-    }
-    <S.Pagination>
+const ProductList: React.FC<ProductListProps> = ({ products, totalPages }) => {
+  const { query: { name, filter } } = useRouter();
+
+  const PAGES_NUMBER = Array(totalPages).fill(1);
+
+  return (
+    <S.ProductList>
       {
-        Array(totalPages).fill(1).map((_, index) => (
-          <Link href={`/?page=${index + 1}`}>
-            <a>{index + 1}</a>
-          </Link>
-        ))
+        products.length < 1 ? <h2>Nenhum produto foi encontrado.</h2>
+          : products.map((product, index: number) => <ProductCard key={index} {...product}/>)
       }
-    </S.Pagination>
-  </S.ProductList>
-);
+      <S.Pagination>
+        {
+          PAGES_NUMBER.map((_, index) => {
+            const url = name ? `/?page=${index + 1}&name=${name}&filter=${filter}&limit=9`
+              : `/?page=${index + 1}&filter=${filter}&limit=9`;
+
+            return (
+            <Link href={url}>
+              <a>{index + 1}</a>
+            </Link>
+            );
+          })
+        }
+      </S.Pagination>
+    </S.ProductList>
+  );
+};
 
 ProductList.propTypes = propTypes;
 
