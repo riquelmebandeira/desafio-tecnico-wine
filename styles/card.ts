@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Card = styled.div`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   width: 256px;
@@ -22,7 +23,6 @@ const Card = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    cursor: pointer;
   }
 
   .discount-container {
