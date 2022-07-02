@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
   return (
     <S.SearchBar>
       <input placeholder="Pesquisar" onChange={({ target }) => setName(target.value)}/>
-      <Link href={`/?name=${name}`}>
+      <Link href={`/?name=${name}&limit=9`}>
         <button type="submit">
           <img src={searchIcon2} alt="ícone de pesquisa" />
         </button>

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import * as S from '../styles';
 import ProductCard from './ProductCard';
+import { pathResolver } from '../utils';
 
 /**
  * I was struggling to name the stylized components and i really liked this approach:
@@ -31,11 +32,11 @@ const ProductList: React.FC<ProductListProps> = ({ products, totalPages }) => {
       <S.Pagination>
         {
           PAGES_NUMBER.map((_, index) => {
-            const url = name ? `/?page=${index + 1}&name=${name}&filter=${filter}&limit=9`
-              : `/?page=${index + 1}&filter=${filter}&limit=9`;
+            const page = index + 1;
+            const path = `/${pathResolver(page, name, filter)}`;
 
             return (
-            <Link href={url}>
+            <Link href={path}>
               <a>{index + 1}</a>
             </Link>
             );
