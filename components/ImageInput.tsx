@@ -9,16 +9,18 @@ import PropTypes, { InferProps } from 'prop-types';
 const propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 type ImageInputProps = InferProps<typeof propTypes>;
 
-const ImageInput: React.FC<ImageInputProps> = ({ src, alt }) => (
-    <input
+const ImageInput: React.FC<ImageInputProps> = ({ src, alt, onClick }) => (
+  <input
     type="image"
     src={ src }
     alt={alt}
-    />
+    onClick={onClick}
+  />
 );
 
 ImageInput.propTypes = propTypes;

@@ -1,6 +1,7 @@
 import searchIcon from './busca.svg';
+import searchIcon2 from './busca2.svg';
 import accountIcon from './conta.svg';
 import cartIcon from './carrinho.svg';
 import wineLogo from './logo.svg';
 
-export { searchIcon, accountIcon, cartIcon, wineLogo };
+export { searchIcon, accountIcon, cartIcon, wineLogo, searchIcon2 };
