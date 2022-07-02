@@ -2,14 +2,17 @@ import { GetServerSideProps } from 'next';
 import ProductList from '../components/ProductList';
 import Header from '../components/Header';
 import Aside from '../components/Aside';
+import * as S from '../styles';
 
 export default function Home({ products, totalPages }) {
   return (
-    <div>
+    <>
       <Header />
-      <Aside />
-      <ProductList products={products} totalPages={totalPages}/>
-    </div>
+      <S.Main>
+        <Aside />
+        <ProductList products={products} totalPages={totalPages}/>
+      </S.Main>
+    </>
   );
 }
 

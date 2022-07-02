@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Aside = styled.aside`
-  max-width: 300px;
+  max-width: 280px;
+  width: 100%;
 
   .aside-title {
     font-weight: 700;
