@@ -5,7 +5,6 @@ import Button from './Button';
 import * as S from '../styles';
 
 const propTypes = {
-  id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
@@ -17,10 +16,10 @@ const propTypes = {
 type ProductCardProps = InferProps<typeof propTypes>;
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
-  const { id, image, name, price, discount, priceMember, priceNonMember } = props;
+  const { image, name, price, discount, priceMember, priceNonMember } = props;
 
   return (
-    <Link href={`/vinhos/${id}`}>
+    <Link href={`/vinhos/${name}`}>
       <div className="product-container">
         <S.Card>
           <img src={image} alt="Foto do produto" />
