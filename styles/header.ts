@@ -2,18 +2,26 @@ import styled from 'styled-components';
 
 const Header = styled.header`
   box-shadow: 0 6px 10px -10px gray;
+  width: 100%;
 
-  div:first-child {
+  .main {
     display: flex;
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     height: 88.23px;
     top: -1px;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
-  img {
+  .menu-container {
+    display: flex;
+  }
+
+  img, a {
     cursor: pointer;
+  }
+
+  .logo, .hamburguer-menu {
     align-self: center;
     width: 102.95px;
     height: 31px;
@@ -27,18 +35,51 @@ const Header = styled.header`
     gap: 48px;
     justify-content: space-around;
     color: #555555;
+  }
 
-      a {
-      cursor: pointer;
+  .header-icons {
+    display: flex;
+    gap: 40px;
+
+    img {
+      width: 56px;
+      height: auto;
     }
   }
 
-  .header-inputs {
-    display: flex;
+  .hamburguer-menu {
+    display: none;
+  }
 
-    input {
-      width: 56px;
-      margin: 16px 20px;
+  @media (max-width: 1024px) {
+    .main {
+      padding: 0 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav, .account-icon {
+      display: none;
+    }
+
+    .hamburguer-menu {
+      display: inline;
+    }
+
+    .logo {
+      width: 80px;
+    }
+
+    .hamburguer-menu {
+      width: 24px;
+    }
+
+    .menu-container {
+      gap: 20px;
+    }
+
+    .header-icons {
+      gap: 20px;
     }
   }
 `;

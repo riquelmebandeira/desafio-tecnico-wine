@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { accountIcon, cartIcon, searchIcon, wineLogo } from '../assets';
-import ImageInput from './ImageInput';
+import { accountIcon, cartIcon, menuIcon, searchIcon, wineLogo } from '../assets';
 import * as S from '../styles';
 import SearchBar from './SearchBar';
 
@@ -11,10 +10,13 @@ const Header: React.FC = () => {
   return (
     <>
     <S.Header>
-      <div>
-        <Link href="/">
-          <img src={wineLogo} alt="Logo da Wine" />
-        </Link>
+      <div className="main">
+        <div className="menu-container">
+          <img src={menuIcon} alt="Menu" className="hamburguer-menu" />
+          <Link href="/">
+            <img src={wineLogo} alt="Logo da Wine" className="logo" />
+          </Link>
+        </div>
         <nav>
           <a>Clube</a>
           <a>Loja</a>
@@ -22,14 +24,14 @@ const Header: React.FC = () => {
           <a>Ofertas</a>
           <a>Eventos</a>
         </nav>
-        <div className="header-inputs">
-          <ImageInput
+        <div className="header-icons">
+          <img
             src={searchIcon}
             alt="Ícone de pesquisa"
             onClick={() => setToggle(!toggle)}
           />
-          <ImageInput src={accountIcon} alt="Ícone da conta" />
-          <ImageInput src={cartIcon} alt="Ícone do carrinho" />
+          <img src={accountIcon} alt="Ícone da conta" className="account-icon" />
+          <img src={cartIcon} alt="Ícone do carrinho" />
         </div>
       </div>
     </S.Header>

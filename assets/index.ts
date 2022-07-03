@@ -5,6 +5,7 @@ import cartIcon from './carrinho.svg';
 import wineLogo from './logo.svg';
 import returnIcon from './left.svg';
 import starIcon from './star.svg';
+import menuIcon from './menu.svg';
 
 export {
   searchIcon,
@@ -14,4 +15,5 @@ export {
   searchIcon2,
   returnIcon,
   starIcon,
+  menuIcon,
 };
