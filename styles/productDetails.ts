@@ -28,40 +28,40 @@ const ProductDetails = styled.main`
     gap: 2px;
   }
 
-  .wine-details img {
-    width: 640px;
-    height: 480px;
-    object-fit: contain;
-  }
-
   .wine-details {
     display: flex;
+
+      img {
+      width: 640px;
+      height: 480px;
+      object-fit: contain;
+    }
   }
 
   .price-container {
     display: flex;
     flex-direction: column;
-  }
 
-  .price-container span:first-child {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.48675px;
-    color: #C81A78;
-  }
+      span:first-child {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 32px;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.48675px;
+      color: #C81A78;
+    }
 
-  .price-container span:last-child {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-feature-settings: 'liga' off;
-    color: #888888;
+      span:last-child {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-feature-settings: 'liga' off;
+      color: #888888;
+    }
   }
 
   section {
@@ -72,11 +72,6 @@ const ProductDetails = styled.main`
     row-gap: 30px;
   }
 
-  .tags img {
-    width: 16px;
-    height: auto;
-  }
-
   .tags {
     font-weight: 400;
     font-size: 14px;
@@ -84,19 +79,26 @@ const ProductDetails = styled.main`
     display: flex;
     gap: 8px;
     color: #555555;
+
+      img {
+      width: 16px;
+      height: auto;
+    }
   }
 
-  .comment-container span {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #666666;
-  }
+  .comment-container {
+      h2 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+    }
 
-  .comment-container h2 {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+      span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #666666;
+    }
   }
 `;
 
