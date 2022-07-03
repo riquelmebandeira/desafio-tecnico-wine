@@ -13,6 +13,7 @@ const Header = styled.header`
   }
 
   img {
+    cursor: pointer;
     align-self: center;
     width: 102.95px;
     height: 31px;

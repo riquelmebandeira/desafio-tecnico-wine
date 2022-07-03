@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { accountIcon, cartIcon, searchIcon, wineLogo } from '../assets';
 import ImageInput from './ImageInput';
 import * as S from '../styles';
@@ -11,7 +12,9 @@ const Header: React.FC = () => {
     <>
     <S.Header>
       <div>
-        <img src={wineLogo} alt="Logo da Wine" />
+        <Link href="/">
+          <img src={wineLogo} alt="Logo da Wine" />
+        </Link>
         <nav>
           <a>Clube</a>
           <a>Loja</a>
