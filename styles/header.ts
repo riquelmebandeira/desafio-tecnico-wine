@@ -4,12 +4,12 @@ const Header = styled.header`
   box-shadow: 0 6px 10px -10px gray;
 
   div:first-child {
-  display: flex;
-  width: 1200px;
-  margin: auto;
-  height: 88.23px;
-  top: -1px;
-  justify-content: space-around;
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    height: 88.23px;
+    top: -1px;
+    justify-content: space-around;
   }
 
   img {
@@ -25,11 +25,11 @@ const Header = styled.header`
     width: 479px;
     gap: 48px;
     justify-content: space-around;
-    color: #555555
-  }
+    color: #555555;
 
-  nav a {
-    cursor: pointer;
+      a {
+      cursor: pointer;
+    }
   }
 
   .header-inputs {
