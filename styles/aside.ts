@@ -32,6 +32,14 @@ const Aside = styled.aside`
     font-size: 14px;
     line-height: 17px;
   }
+
+  @media (max-width: 1024px) {
+    padding-left: 90px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default Aside;
