@@ -15,11 +15,11 @@ const Pagination = styled.div`
     border: 2px solid #B6116E;
     border-radius: 3px;
     padding: 8px;
-  }
 
-  a:hover {
-    background-color: #e43fa0;
-    color: white;
+      :hover {
+      background-color: #e43fa0;
+      color: white;
+    }
   }
 `;
 
