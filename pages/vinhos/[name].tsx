@@ -43,7 +43,7 @@ export default function Wine({ wine }) {
             <h2>Comentário do Sommelier</h2>
             <span>{wine.sommelierComment}</span>
           </div>
-          <ProductAdder />
+          <ProductAdder product={wine} />
         </section>
       </div>
     </S.ProductDetails>

@@ -3,6 +3,7 @@ import PropTypes, { InferProps } from 'prop-types';
 import Link from 'next/link';
 import Button from './Button';
 import * as S from '../styles';
+import { handleCartProduct } from '../utils';
 
 const propTypes = {
   image: PropTypes.string.isRequired,
@@ -19,8 +20,8 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
   const { image, name, price, discount, priceMember, priceNonMember } = props;
 
   return (
-    <Link href={`/vinhos/${name}`}>
-      <div className="product-container">
+    <div className="product-container">
+      <Link href={`/vinhos/${name}`}>
         <S.Card>
           <img src={image} alt="Foto do produto" />
           <a>{name}</a>
@@ -33,9 +34,9 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
           </span>
           <span className="non-member-price">{`Não Sócio R$ ${priceNonMember}`}</span>
         </S.Card>
-        <Button text="Adicionar" />
-      </div>
-    </Link>
+      </Link>
+      <Button text="Adicionar" onClick={() => handleCartProduct(props)} />
+    </div>
   );
 };
 
