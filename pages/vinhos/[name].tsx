@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { returnIcon, starIcon } from '../../assets';
-import QtyButton from '../../components/QtyButton';
+import ProductAdder from '../../components/ProductAdder';
 import { BASE_URL, pathResolver } from '../../utils';
 import * as S from '../../styles';
 import Header from '../../components/Header';
@@ -43,7 +43,7 @@ export default function Wine({ wine }) {
             <h2>Comentário do Sommelier</h2>
             <span>{wine.sommelierComment}</span>
           </div>
-          <QtyButton />
+          <ProductAdder />
         </section>
       </div>
     </S.ProductDetails>

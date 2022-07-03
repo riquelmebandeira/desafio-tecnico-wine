@@ -7,6 +7,7 @@ import SearchBar from './searchBar';
 import Aside from './aside';
 import Main from './main';
 import ProductDetails from './productDetails';
+import ProductAdder from './productAdder';
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Aside,
   Main,
   ProductDetails,
+  ProductAdder,
 };
