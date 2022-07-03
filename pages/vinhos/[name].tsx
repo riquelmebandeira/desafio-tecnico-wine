@@ -18,9 +18,10 @@ export default function Wine({ wine }) {
         <img src={returnIcon} alt="Botão de retroceder"/>
         Voltar
       </button>
-      <div className="wine-details">
-        <img src={wine.image} alt={`Foto do vinho ${name}`} />
-        <section>
+      <div className="page-content">
+        <img src={wine.image} alt={`Foto do vinho ${name}`} className="desktop-image"/>
+        <section className="product-details">
+          <img src={wine.image} alt={`Foto do vinho ${name}`} className="mobile-image"/>
           <div className="headers">
             <h1>{name}</h1>
             <div className="tags">

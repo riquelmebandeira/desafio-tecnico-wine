@@ -7,7 +7,8 @@ const ProductAdder = styled.div`
   border-radius: 3.8px;
   cursor: pointer;
   color: white;
-  width: 328px;
+  max-width: 328px;
+  width: 100%;
   height: 56px;
   display: flex;
 
