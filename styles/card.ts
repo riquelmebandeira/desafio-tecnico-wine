@@ -32,22 +32,23 @@ const Card = styled.div`
     gap: 8px;
     display: flex;
     justify-content: center;
-  }
 
-  .discount-container span:first-child {
-    color: #888888;
-    line-height: 16px;
-    text-align: center;
-    text-decoration-line: line-through;
-  }
+      span:first-child {
+      color: #888888;
+      font-size: 11px;
+      line-height: 16px;
+      text-align: center;
+      text-decoration-line: line-through;
+    }
 
-  .discount-container span:nth-child(2) {
-    align-self: center;
-    color: white;
-    background: #F79552;
-    border-radius: 1.94677px;
-    text-transform: uppercase;
-    padding: 1.9px;
+      span:nth-child(2) {
+      align-self: center;
+      color: white;
+      background: #F79552;
+      border-radius: 1.94677px;
+      text-transform: uppercase;
+      padding: 1.9px;
+    }
   }
 
   .member-price {
