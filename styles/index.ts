@@ -6,5 +6,16 @@ import ProductList from './productList';
 import SearchBar from './searchBar';
 import Aside from './aside';
 import Main from './main';
+import ProductDetails from './productDetails';
 
-export { Header, Pagination, Button, ProductList, Card, SearchBar, Aside, Main };
+export {
+  Header,
+  Pagination,
+  Button,
+  ProductList,
+  Card,
+  SearchBar,
+  Aside,
+  Main,
+  ProductDetails,
+};

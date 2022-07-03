@@ -1,8 +1,10 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { returnIcon } from '../../assets';
+import { returnIcon, starIcon } from '../../assets';
 import QtyButton from '../../components/QtyButton';
 import { BASE_URL, pathResolver } from '../../utils';
+import * as S from '../../styles';
+import Header from '../../components/Header';
 
 export default function Wine({ wine }) {
   const router = useRouter();
@@ -10,27 +12,41 @@ export default function Wine({ wine }) {
 
   return (
     <>
-      <a>
-        <img src={returnIcon} alt="Botão de retroceder" onClick={() => router.back()}/>
+    <Header />
+    <S.ProductDetails>
+      <button className="return-button" onClick={() => router.back()}>
+        <img src={returnIcon} alt="Botão de retroceder"/>
         Voltar
-      </a>
-      <div>
+      </button>
+      <div className="wine-details">
         <img src={wine.image} alt={`Foto do vinho ${name}`} />
-        <h1>{name}</h1>
-        <div className="tags">
-          <img src={wine.flag} alt={`Bandeira de ${wine.country}`} />
-          <span>{wine.country}</span>
-          <span>{wine.type}</span>
-          <span>{wine.classification}</span>
-          <span>{wine.rating}</span>
-          <span>{wine.avaliations}</span>
-        </div>
-        <span>{`R$${wine.priceMember}`}</span>
-        <span>{`R$${wine.priceNonMember}`}</span>
-        <h2>Comentário do Sommelier</h2>
-        <span>{wine.sommelierComment}</span>
-        <QtyButton />
+        <section>
+          <div className="headers">
+            <h1>{name}</h1>
+            <div className="tags">
+              <img src={wine.flag} alt={`Bandeira do país ${wine.country}`} />
+              <span>{wine.country}</span>
+              <span>{wine.type}</span>
+              <span>{wine.classification}</span>
+              <div className="rating">
+                <span>{wine.rating}</span>
+                <img src={starIcon} alt="Estrela de avaliação" />
+              </div>
+              <span>{`(${wine.avaliations})`}</span>
+            </div>
+          </div>
+          <div className="price-container">
+            <span>{`R$ ${wine.priceMember}`}</span>
+            <span>{`Não sócio R$ ${wine.priceNonMember}/UN.`}</span>
+          </div>
+          <div className="comment-container">
+            <h2>Comentário do Sommelier</h2>
+            <span>{wine.sommelierComment}</span>
+          </div>
+          <QtyButton />
+        </section>
       </div>
+    </S.ProductDetails>
     </>
   );
 }
